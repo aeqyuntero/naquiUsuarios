@@ -1,0 +1,55 @@
+.fondo {
+    width: 100vw;
+    background-image: url("https://www.clinicarevivir.com/fotospages/mac_dermatologia_1541691635.jpg");
+    background-size: cover;
+    background-size: 25rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+  }
+  
+  .fullscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .carousel {
+    width: 40rem;
+  }
+  .carousel-inner {
+    width: 40rem;
+  }
+  .item {
+    width: 40rem;
+  }
+  
+  .card-img-overlay-ca {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    padding: 1rem;
+    border-radius: calc(0.25rem - 1px);
+  }
+  
+  .card-img-overlay-ba {
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    padding: 1rem;
+    border-radius: calc(0.25rem - 1px);
+  }
+  
+  .chat {
+    width: 8rem;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+  }
+  
