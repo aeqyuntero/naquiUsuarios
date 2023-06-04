@@ -12,7 +12,6 @@ import Swal from 'sweetalert2';
 export class CitasComponent implements OnInit {
   tipoCita: string = '';
   citas = [];
-  cargandoEmp = true;
   cargandoCitas = true;
   seleccionTipoCita = false;
 
@@ -68,10 +67,6 @@ export class CitasComponent implements OnInit {
         });
       }
     });
-  }
-
-  get getCargandoEmp(): boolean {
-    return this.cargandoEmp;
   }
 
   get getCargandoCitas(): boolean {

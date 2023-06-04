@@ -1,3 +1,4 @@
+<br>
 <h1>Citas Disponibles</h1>
 <hr>
 
@@ -11,13 +12,13 @@
     </div>
 </div>
 
-<h3>Empresa: </h3>
+<h3>Tipo de cita: </h3>
 <div class="row">
 
     <div class="col text-end">
 
-        <select class="form-select form-select-lg mb-3" [disabled]="getCargandoEmp" name="miselect"
-            [(ngModel)]="tipoCita" (change)="obtenerCitas()">
+        <select class="form-select form-select-lg mb-3" name="miselect" [(ngModel)]="tipoCita"
+            (change)="obtenerCitas()">
             <option value="P">Psicológica</option>
             <option value="F">Fisioterapéutica</option>
         </select>

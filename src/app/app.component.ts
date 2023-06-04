@@ -8,9 +8,5 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'naquiUsuarios';
 
-  ngOnInit() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('usuario');
-    localStorage.removeItem('idEmpresa');
-  }
+  ngOnInit() {}
 }
