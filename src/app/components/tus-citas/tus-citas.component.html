@@ -1,6 +1,18 @@
 <h1>Tus Citas</h1>
 <hr>
 
+<div class="row">
+    <div class="col text-end">
+
+        <button class="btn btn-primary" [routerLink]="['/citas']">
+            <i class="fa fa-plus"></i>
+            Agendar Citas
+        </button>
+        <br>
+
+    </div>
+</div>
+
 <div *ngIf="getCargandoCitas" class="alert alert-info text-center mt-3 animated fadeIn faster">
     <h4 class="alert-heading">Cargando</h4>
     <p>
