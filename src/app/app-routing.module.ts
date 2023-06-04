@@ -8,9 +8,17 @@ import { AutenticacionGuard } from './guards/autenticacion.guard';
 import { TusCitasComponent } from './components/tus-citas/tus-citas.component';
 import { ConferenciasComponent } from './components/conferencias/conferencias.component';
 import { ConferenciaComponent } from './components/conferencia/conferencia.component';
+import { MisionComponent } from './components/mision/mision.component';
+import { VisionComponent } from './components/vision/vision.component';
+import { ValoresComponent } from './components/valores/valores.component';
+import { ModeloOrganizacionalComponent } from './components/modelo-organizacional/modelo-organizacional.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'mision', component: MisionComponent },
+  { path: 'vision', component: VisionComponent },
+  { path: 'valores', component: ValoresComponent },
+  { path: 'modelo-organizacional', component: ModeloOrganizacionalComponent },
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
   {
     path: 'citas',

@@ -8,6 +8,19 @@
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/home']">Inicio</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="links nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Sobre Nosotros
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" [routerLink]="['mision']">Mision</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['vision']">Vision</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['valores']">Valores</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['modelo-organizacional']">Modelo Organizacional</a>
+                        </li>
+                    </ul>
+                </li>
                 <li *ngIf="isLogged" class="nav-item dropdown">
                     <a class="links nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">

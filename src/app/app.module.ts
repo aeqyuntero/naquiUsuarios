@@ -16,6 +16,10 @@ import { ConferenciaComponent } from './components/conferencia/conferencia.compo
 import { DomseguroPipe } from './pipes/domseguro.pipe';
 import { FechaPipe } from './pipes/fecha.pipe';
 import { TusCitasComponent } from './components/tus-citas/tus-citas.component';
+import { MisionComponent } from './components/mision/mision.component';
+import { VisionComponent } from './components/vision/vision.component';
+import { ValoresComponent } from './components/valores/valores.component';
+import { ModeloOrganizacionalComponent } from './components/modelo-organizacional/modelo-organizacional.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,10 @@ import { TusCitasComponent } from './components/tus-citas/tus-citas.component';
     DomseguroPipe,
     FechaPipe,
     TusCitasComponent,
+    MisionComponent,
+    VisionComponent,
+    ValoresComponent,
+    ModeloOrganizacionalComponent,
   ],
   imports: [
     BrowserModule,
