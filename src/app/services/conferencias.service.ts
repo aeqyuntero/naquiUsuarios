@@ -25,10 +25,9 @@ export class ConferenciasService {
         if (conferencias.length == 0) {
           return [];
         }
-        conferencias.forEach((conf) => {
+        /*conferencias.forEach((conf) => {
           conf.empresas = this.crearArregloEmpresasConferencia(conf.empresas);
-        });
-        console.log(conferencias);
+        });*/
         conferencias = conferencias.filter((conf) => {
           const empresas = conf.empresas.filter(
             (emp) => emp.id == localStorage.getItem('idEmpresa')

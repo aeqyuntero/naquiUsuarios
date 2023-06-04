@@ -25,7 +25,8 @@
 <div class="row mt-2 mb-5">
     <div class="col text-center" *ngIf="!getCargando">
 
-        <iframe [src]="conferencia.url | domseguro" title="YouTube video player" frameborder="0"
+        <iframe width="740" height="415" [src]="conferencia.url | domseguro" title="YouTube video player"
+            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
         </iframe>
@@ -34,5 +35,6 @@
 </div>
 
 <div class="mb-2">
-    <p>Resumen: {{conferencia.descripcion}}</p>
+    <h2>Resumen</h2>
+    <p>{{conferencia.descripcion}}</p>
 </div>
