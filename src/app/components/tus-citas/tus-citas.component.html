@@ -43,6 +43,8 @@
             <h5 class="card-title">{{cita.nombreEmpleado}}</h5>
             <p class="card-text">Fecha: {{cita.fecha}}</p>
             <p class="card-text">Hora: {{cita.hora | fecha}}</p>
+            <p *ngIf="cita.tipoCita == 'P'" class="card-text">Tipo: Psicológica</p>
+            <p *ngIf="cita.tipoCita == 'F'" class="card-text">Tipo: Fisioterapéutica</p>
         </div>
 
         <button (click)="eliminarCita(cita)" type="button" class="btn btn-danger">

@@ -5,6 +5,9 @@
         </a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/home']">Inicio</a>
+                </li>
                 <li *ngIf="isLogged" class="nav-item dropdown">
                     <a class="links nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
