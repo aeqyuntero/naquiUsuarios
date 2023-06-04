@@ -22,6 +22,7 @@ export class NavbarComponent implements OnInit {
       if (confirmar.isConfirmed) {
         localStorage.removeItem('usuario');
         localStorage.removeItem('token');
+        localStorage.removeItem('idEmpresa');
 
         window.location.reload();
       }
