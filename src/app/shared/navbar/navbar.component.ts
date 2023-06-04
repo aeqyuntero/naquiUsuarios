@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
         localStorage.removeItem('token');
         localStorage.removeItem('idEmpresa');
 
-        window.location.reload();
+        this.router.navigate(['home']);
       }
     });
   }
