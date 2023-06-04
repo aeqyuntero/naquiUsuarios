@@ -1,1 +1,38 @@
-<p>conferencia works!</p>
+<br>
+<h1>{{conferencia.nombre}}</h1>
+<h5>Fecha: {{conferencia.fecha}}</h5>
+<hr>
+
+<div class="row text-end">
+    <div class="col">
+        <button class="btn btn-danger" [routerLink]="['/conferencias']">
+            <i class="fa fa-arrow-left"></i>
+            Regresar
+        </button>
+    </div>
+</div>
+
+<div *ngIf="getCargando" class="alert alert-info text-center mt-3 animated fadeIn faster">
+    <h4 class="alert-heading">Cargando</h4>
+    <p>
+        <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+    </p>
+    <p class="mb-0">
+        Espere por favor
+    </p>
+</div>
+
+<div class="row mt-2 mb-5">
+    <div class="col text-center" *ngIf="!getCargando">
+
+        <iframe [src]="conferencia.url | domseguro" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+</div>
+
+<div class="mb-2">
+    <p>Resumen: {{conferencia.descripcion}}</p>
+</div>

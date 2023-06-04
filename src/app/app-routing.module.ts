@@ -6,6 +6,8 @@ import { LoginGuard } from './guards/login.guard';
 import { CitasComponent } from './components/citas/citas.component';
 import { AutenticacionGuard } from './guards/autenticacion.guard';
 import { TusCitasComponent } from './components/tus-citas/tus-citas.component';
+import { ConferenciasComponent } from './components/conferencias/conferencias.component';
+import { ConferenciaComponent } from './components/conferencia/conferencia.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +20,16 @@ const routes: Routes = [
   {
     path: 'tusCitas',
     component: TusCitasComponent,
+    canActivate: [AutenticacionGuard],
+  },
+  {
+    path: 'conferencias',
+    component: ConferenciasComponent,
+    canActivate: [AutenticacionGuard],
+  },
+  {
+    path: 'conferencia/:id',
+    component: ConferenciaComponent,
     canActivate: [AutenticacionGuard],
   },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
