@@ -1,1 +1,64 @@
-<p>citas works!</p>
+<h1>Citas Disponibles</h1>
+<hr>
+
+<div class="row text-end">
+    <div class="col">
+        <button class="btn btn-danger" [routerLink]="['/tusCitas']">
+            <i class="fa fa-arrow-left"></i>
+            Regresar
+        </button>
+        <br>
+    </div>
+</div>
+
+<h3>Empresa: </h3>
+<div class="row">
+
+    <div class="col text-end">
+
+        <select class="form-select form-select-lg mb-3" [disabled]="getCargandoEmp" name="miselect"
+            [(ngModel)]="tipoCita" (change)="obtenerCitas()">
+            <option value="P">Psicológica</option>
+            <option value="F">Fisioterapéutica</option>
+        </select>
+        <br>
+
+    </div>
+</div>
+
+<div *ngIf="getCargandoCitas && getSeleccionTipoCita" class="alert alert-info text-center mt-3 animated fadeIn faster">
+    <h4 class="alert-heading">Cargando</h4>
+    <p>
+        <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+    </p>
+    <p class="mb-0">
+        Espere por favor
+    </p>
+</div>
+
+<div *ngIf="!getCargandoCitas && !existenRegistros" class="alert alert-warning text-center mt-3 animated fadeIn faster">
+    <h4 class="alert-heading">No hay registros</h4>
+    <p>
+        <i class="fa fa-exclamation fa-2x"></i>
+    </p>
+</div>
+
+<div *ngIf="!getCargandoCitas && existenRegistros" class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let cita of citas" class="card h-100">
+        <div class="text-center">
+            <img *ngIf="tipoCita == 'P'" src="/assets/images/psychologist.png" class="img-top" width="200" height="250">
+            <img *ngIf="tipoCita == 'F'" src="/assets/images/physiotherapist.png" class="img-top" width="200"
+                height="250">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{cita.nombreEmpleado}}</h5>
+            <p class="card-text">Fecha: {{cita.fecha}}</p>
+            <p class="card-text">Hora: {{cita.hora | fecha}}</p>
+        </div>
+
+        <button type="button" class="btn btn-primary" (click)="asignarCita(cita)">
+            <i class="fas fa-save"></i>
+            Asignar Cita
+        </button>
+    </div>
+</div>

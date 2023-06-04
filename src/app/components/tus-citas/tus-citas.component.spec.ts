@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CitaComponent } from './cita.component';
+import { TusCitasComponent } from './tus-citas.component';
 
-describe('CitaComponent', () => {
-  let component: CitaComponent;
-  let fixture: ComponentFixture<CitaComponent>;
+describe('TusCitasComponent', () => {
+  let component: TusCitasComponent;
+  let fixture: ComponentFixture<TusCitasComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CitaComponent ]
+      declarations: [ TusCitasComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CitaComponent);
+    fixture = TestBed.createComponent(TusCitasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

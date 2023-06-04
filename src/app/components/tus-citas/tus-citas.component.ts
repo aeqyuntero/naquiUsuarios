@@ -1,33 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { CitasService } from '../../services/citas.service';
-import { EmpleadosService } from 'src/app/services/empleados.service';
 import { EmpleadoModel } from 'src/app/models/empleado.model';
+import { CitasService } from 'src/app/services/citas.service';
+import { EmpleadosService } from 'src/app/services/empleados.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-citas',
-  templateUrl: './citas.component.html',
-  styleUrls: ['./citas.component.css'],
+  selector: 'app-tus-citas',
+  templateUrl: './tus-citas.component.html',
+  styleUrls: ['./tus-citas.component.css'],
 })
-export class CitasComponent implements OnInit {
-  tipoCita: string = '';
+export class TusCitasComponent implements OnInit {
   citas = [];
   cargandoEmp = true;
   cargandoCitas = true;
-  seleccionTipoCita = false;
 
   constructor(
     private citasService: CitasService,
     private empleadosService: EmpleadosService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.obtenerCitas();
+  }
 
   obtenerCitas() {
-    this.seleccionTipoCita = true;
     this.cargandoCitas = true;
     this.citas = [];
-    this.citasService.obtenerCitas(this.tipoCita).subscribe((resp: any[]) => {
+    this.citasService.obtenerTusCitas().subscribe((resp: any[]) => {
       if (resp.length == 0) {
         this.cargandoCitas = false;
         return;
@@ -48,20 +47,20 @@ export class CitasComponent implements OnInit {
     });
   }
 
-  asignarCita(cita: any) {
+  eliminarCita(cita: any) {
     Swal.fire({
       title: 'Confirmar',
       icon: 'question',
-      text: '¿Deseas asignar esta cita?',
+      text: '¿Deseas eliminar esta cita?',
       showCancelButton: true,
     }).then((confirmar) => {
       if (confirmar.isConfirmed) {
         delete cita.nombreEmpleado;
-        cita.idUsuario = localStorage.getItem('token');
+        cita.idUsuario = '';
         this.citasService.actualizarCita(cita).subscribe((resp) => {
           Swal.fire({
             icon: 'success',
-            text: 'Cita asignada con éxito',
+            text: 'Cita eliminada con éxito',
           }).then(() => {
             this.citas = this.citas.filter((citaArr) => citaArr.id != cita.id);
           });
@@ -80,9 +79,5 @@ export class CitasComponent implements OnInit {
 
   get existenRegistros(): boolean {
     return this.citas.length != 0;
-  }
-
-  get getSeleccionTipoCita(): boolean {
-    return this.seleccionTipoCita;
   }
 }

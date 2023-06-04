@@ -1,0 +1,40 @@
+<h1>Tus Citas</h1>
+<hr>
+
+<div *ngIf="getCargandoCitas" class="alert alert-info text-center mt-3 animated fadeIn faster">
+    <h4 class="alert-heading">Cargando</h4>
+    <p>
+        <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+    </p>
+    <p class="mb-0">
+        Espere por favor
+    </p>
+</div>
+
+<div *ngIf="!getCargandoCitas && !existenRegistros" class="alert alert-warning text-center mt-3 animated fadeIn faster">
+    <h4 class="alert-heading">No hay registros</h4>
+    <p>
+        <i class="fa fa-exclamation fa-2x"></i>
+    </p>
+</div>
+
+<div *ngIf="!getCargandoCitas && existenRegistros" class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let cita of citas" class="card h-100">
+        <div class="text-center">
+            <img *ngIf="cita.tipoCita == 'P'" src="/assets/images/psychologist.png" class="img-top" width="200"
+                height="250">
+            <img *ngIf="cita.tipoCita == 'F'" src="/assets/images/physiotherapist.png" class="img-top" width="200"
+                height="250">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{cita.nombreEmpleado}}</h5>
+            <p class="card-text">Fecha: {{cita.fecha}}</p>
+            <p class="card-text">Hora: {{cita.hora | fecha}}</p>
+        </div>
+
+        <button (click)="eliminarCita(cita)" type="button" class="btn btn-danger">
+            <i class="far fa-trash-alt"></i>
+            Eliminar
+        </button>
+    </div>
+</div>

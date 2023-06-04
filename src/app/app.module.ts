@@ -11,14 +11,26 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { CitasComponent } from './components/citas/citas.component';
-import { CitaComponent } from './components/cita/cita.component';
 import { ConferenciasComponent } from './components/conferencias/conferencias.component';
 import { ConferenciaComponent } from './components/conferencia/conferencia.component';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
 import { FechaPipe } from './pipes/fecha.pipe';
+import { TusCitasComponent } from './components/tus-citas/tus-citas.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent, FooterComponent, LoginComponent, CitasComponent, CitaComponent, ConferenciasComponent, ConferenciaComponent, DomseguroPipe, FechaPipe],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    NavbarComponent,
+    FooterComponent,
+    LoginComponent,
+    CitasComponent,
+    ConferenciasComponent,
+    ConferenciaComponent,
+    DomseguroPipe,
+    FechaPipe,
+    TusCitasComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
